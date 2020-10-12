@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Homework1
 {
-    class MyClass
+    public class MyClass
     {
         public static void Pause()
         {

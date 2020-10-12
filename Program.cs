@@ -45,7 +45,7 @@ namespace BasicCSharp
 
         static void Main(string[] args)
         {
-            #region Tusk1
+            #region Task1
             //double x;
             //double y;
             //Console.Write("Введите первое число: ");
@@ -58,7 +58,7 @@ namespace BasicCSharp
             //Console.Readline();
             #endregion
 
-            #region Tusk2
+            #region Task2
             //double a = 1;
             //double b = 1;
             //double c = 1;
@@ -72,7 +72,7 @@ namespace BasicCSharp
 
             #endregion
 
-            #region Tusk3
+            #region Task3
             //int a = 10;     // Присваиваем начальное значение
             //int b = 20;     // Присваиваем начальное значение
             //int t = a;        // В t запоминаем значение a
@@ -80,19 +80,19 @@ namespace BasicCSharp
             //b = t;           // В b записываем сохраненное a
             #endregion
 
-            #region Tusk4
+            #region Task4
             //int value = 100500;
             //Console.WriteLine(Odd(value));
             //Console.ReadLine();
             #endregion
 
-            #region Tusk5
+            #region Task5
             //Print("Привет!\n", 10, 10);
             //Print("Привет еще раз!", ConsoleColor.Magenta);
             //Console.ReadLine();
             #endregion
 
-            #region Tusk6
+            #region Task6
             //Console.Write("Введите a: ");
             //double a = double.Parse(Console.ReadLine());
             //Console.Write("Введите b: ");
