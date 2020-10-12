@@ -47,6 +47,82 @@ namespace Lesson2
             return true;
         }
 
+        /// <summary>
+        /// Без использования рекурсии:
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        static uint Factorial(uint n)
+        {
+            uint res = 1;
+            for (uint i = 0; i <= n; i++)
+                if (i == 0)
+                    res = 1;
+                else
+                    res *= i;
+            return res;
+        }
+
+        /// <summary>
+        /// С использованием рекурсии (0!=1, n!=n*(n-1)!)
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        static uint Factorial_2(uint n)
+        {
+            if (n == 0) return 1;
+            else return Factorial(n - 1) * n;
+        }
+
+        /// <summary>
+        /// Последовательность Фибоначчи
+        /// <para>Использования цикла for</para>
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        static uint Fib(uint n)
+        {
+            uint a0 = 0;
+            uint a1 = 1;
+            uint a = a1;
+            for (int i = 2; i <= n; i++)
+            {
+                a = a0 + a1;
+                a0 = a1;
+                a1 = a;
+            }
+            return a1;
+        }
+
+        /// <summary>
+        /// Использование рекурсии:
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        static uint Fib_2(uint n)
+        {
+            if (n == 0) return 0;
+            if (n == 1) return 1;
+            return Fib(n - 1) + Fib(n - 2);
+        }
+
+        /// <summary>
+        ///  «Ханойская башня»
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <param name="free"></param>
+        static void Move(int number, int from, int to, int free)
+        {
+            if (number > 0)
+            {
+                Move(number - 1, from, free, to);
+                Console.WriteLine("{0} => {1}", from, to);
+                Move(number - 1, free, to, from);
+            }
+        }
+
         static void Main(string[] args)
         {
             #region Task1
@@ -93,16 +169,37 @@ namespace Lesson2
             #endregion
 
             #region Task5
-            DateTime start = DateTime.Now;
-            int k = 0;
-            for (int i = 2; i < 1000000; i++)
-                if (IsSimple(i))
-                {
-                    k++;
-                    Console.WriteLine("{0} {1}", k, i);
-                }
-            Console.WriteLine(k);
-            Console.WriteLine(DateTime.Now - start);
+            //DateTime start = DateTime.Now;
+            //int k = 0;
+            //for (int i = 2; i < 1000000; i++)
+            //    if (IsSimple(i))
+            //    {
+            //        k++;
+            //        Console.WriteLine("{0} {1}", k, i);
+            //    }
+            //Console.WriteLine(k);
+            //Console.WriteLine(DateTime.Now - start);
+            //Console.ReadLine();
+            #endregion
+
+            #region Task6
+            ////Дано натуральное число n. Вычислить n! 
+            //Console.WriteLine("Введите число:");
+            //uint n = Convert.ToUInt32(Console.ReadLine());
+            //Console.WriteLine(Factorial_2(n));
+            //Console.ReadLine();
+            #endregion
+
+            #region Task7
+            ////Последовательность Фибоначчи
+            //Console.WriteLine("Введите число:");
+            //uint n = Convert.ToUInt32(Console.ReadLine());
+            //Console.WriteLine(Fib_2(n));
+            //Console.ReadLine();
+            #endregion
+
+            #region Task8
+            Move(4, 1, 2, 3);
             Console.ReadLine();
             #endregion
 
