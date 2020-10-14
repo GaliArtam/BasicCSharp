@@ -71,7 +71,7 @@ namespace Lesson2
         static uint Factorial_2(uint n)
         {
             if (n == 0) return 1;
-            else return Factorial(n - 1) * n;
+            else return Factorial_2(n - 1) * n;
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Lesson2
         {
             if (n == 0) return 0;
             if (n == 1) return 1;
-            return Fib(n - 1) + Fib(n - 2);
+            return Fib_2(n - 1) + Fib_2(n - 2);
         }
 
         /// <summary>
