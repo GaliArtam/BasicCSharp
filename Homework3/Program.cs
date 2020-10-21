@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -86,6 +87,94 @@ namespace Homework3
             if (this.im < 0) return re + "" + im + "i";
             else if (this.re == 0) return im + "i";
             else return re + "+" + im + "i";
+        }
+    }
+
+    class Drob
+    {
+        int chis;
+        int znam;
+
+        public Drob()
+        {
+            chis = 1;
+            znam = 1;
+        }
+
+        public Drob (int chis, int znam)
+        {
+            this.chis = chis;
+            this.znam = znam;
+        }
+
+        public Drob Plus(Drob x2)
+        {
+            Drob resul = new Drob();
+            resul.chis = this.chis * x2.znam + x2.chis * this.znam;
+            resul.znam = this.znam * x2.znam;
+            return resul;
+        }
+
+        public Drob Minus(Drob x2)
+        {
+            Drob resul = new Drob();
+            resul.chis = this.chis * x2.znam - x2.chis * this.znam;
+            resul.znam = this.znam * x2.znam;
+            return resul;
+        }
+
+        public Drob Proiz(Drob x2)
+        {
+            Drob resul = new Drob();
+            resul.chis = this.chis * x2.chis;
+            resul.znam = this.znam * x2.znam;
+            return resul;
+        }
+
+        public Drob Del(Drob x2)
+        {
+            Drob resul = new Drob();
+            resul.chis = this.chis * x2.znam;
+            resul.znam = this.znam * x2.chis;
+            return resul;
+        }
+
+        public int Chis
+        {
+            get
+            {
+                return chis;
+            }
+            set
+            {
+                chis = value;
+            }
+        }
+
+        public int Znam
+        {
+            get
+            {
+                return znam;
+            }
+            set
+            {
+                znam = value;
+            }
+        }
+
+        public double DesDrob
+        {
+            get
+            {
+                double DesDrob = chis / znam;
+                return DesDrob;
+            }
+        }
+
+        public string Print ()
+        {
+            return chis + " / " + znam;
         }
     }
 
@@ -189,6 +278,58 @@ namespace Homework3
             //}
             //if (Check(sum.ToString())) Console.WriteLine("Сумма всех нечётных положительных чисел\n" + sum);
             //Console.ReadLine();
+            #endregion
+
+            #region Tusk_3
+            Console.WriteLine("Представляю вашему вниманию класс дробей.\n" +
+                "Введите числитель первой дроби");
+            int a1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите знаменатель первой дроби");
+            int b1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите числитель второй дроби");
+            int a2 = int.Parse(Console.ReadLine()); 
+            Console.WriteLine("Введите знаменатель второй дроби");
+            int b2 = int.Parse(Console.ReadLine());
+            Drob x1 = new Drob(a1, b1);
+            Drob x2 = new Drob(a2, b2);
+            Drob resul = new Drob();
+            Console.WriteLine("Какие действия выхотите выполнить над своими дробями?\n" +
+                "1) Сложение;\n" +
+                "2) Вычитание;\n" +
+                "3) Умножение;\n" +
+                "4) Деление;\n" +
+                "5) Преобразовать первую дровь в десятичную;\n" +
+                "6) Преобразовать вторую дробь в десятичную.");
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    resul = x1.Plus(x2);
+                    Console.WriteLine(resul.Print());
+                    break;
+                case "2":
+                    resul = x1.Minus(x2);
+                    Console.WriteLine(resul.Print());
+                    break;
+                case "3":
+                    resul = x1.Proiz(x2);
+                    Console.WriteLine(resul.Print());
+                    break;
+                case "4":
+                    resul = x1.Del(x2);
+                    Console.WriteLine(resul.Print());
+                    break;
+                case "5":
+                    double a = x1.DesDrob;
+                    Console.WriteLine(a);
+                    break;
+                case "6":
+                    double b = x2.DesDrob;
+                    Console.WriteLine(b);
+                    break;
+                default:
+                    break;
+            }
+            Console.ReadLine();
             #endregion
         }
     }
