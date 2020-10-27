@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson2", "Lesson2\Lesson2.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework2", "Homework2\Homework2.csproj", "{CDE81F15-7CD0-441B-B726-499E92E53205}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classwork3", "Classwork3\Classwork3.csproj", "{75F80DC0-A4C6-45C3-87C2-7F09F9EAF1D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson3", "Classwork3\Lesson3.csproj", "{75F80DC0-A4C6-45C3-87C2-7F09F9EAF1D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3", "Homework3\Homework3.csproj", "{B83D0077-37E5-4E35-842B-A55AAEB84CEE}"
 EndProject
